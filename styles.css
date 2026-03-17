@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.summary-box {
+    background: linear-gradient(145deg, #252525, #2d2d2d);
+    border-left: 6px solid #007bff;
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 1000px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.summary-box h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.stats-grid p {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #3d3d3d;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.stats-grid b {
+    display: block;
+    color: #007bff;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.stats-grid span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+@media (max-width: 800px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* NY SEKSJON FOR Å FIKSE BREDDEN */
+#table-container {
+    width: 100%;
+    max-width: 1000px; /* Samme max-bredde som summary-box */
+    display: flex;
+    justify-content: center; /* Sentrerer tabellen hvis den er smalere enn 1000px */
+}
+
+table.dataframe {
+    border-collapse: collapse;
+    width: 100%; /* Tabellen fyller nå containeren sin */
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+    text-align: left;
+    padding: 18px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+th:last-child {
+    text-align: right;
+}
+
+td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+tr:nth-child(even) {
+    background-color: #252525;
+}
+
+tr:hover {
+    background-color: #323232;
+    cursor: default;
+}
+
+td:last-child {
+    text-align: right;
+    font-family: "Consolas", monospace;
+    color: #00ffcc;
+    font-weight: bold;
+}
