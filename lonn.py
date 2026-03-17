@@ -37,8 +37,12 @@ html_output = f"""<!doctype html>
     <div id="table-container">
         {tabell_html}
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>"""
 
 with open("ansatte.html", "w", encoding="utf-8") as f_out:
     f_out.write(html_output)
+
+print("Suksess! Alle filer er nå separert og rapporten er generert.")

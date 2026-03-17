@@ -128,3 +128,18 @@ td:last-child {
     color: #00ffcc;
     font-weight: bold;
 }
+
+th {
+    cursor: pointer;
+    user-select: none;
+}
+
+th:hover {
+    background-color: #0056b3;
+}
+
+th::after {
+    content: " ↕";
+    font-size: 0.7rem;
+    opacity: 0.5;
+}
