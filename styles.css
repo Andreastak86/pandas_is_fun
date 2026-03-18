@@ -78,17 +78,16 @@ body {
     }
 }
 
-/* NY SEKSJON FOR Å FIKSE BREDDEN */
 #table-container {
     width: 100%;
-    max-width: 1000px; /* Samme max-bredde som summary-box */
+    max-width: 1000px;
     display: flex;
-    justify-content: center; /* Sentrerer tabellen hvis den er smalere enn 1000px */
+    justify-content: center;
 }
 
 table.dataframe {
     border-collapse: collapse;
-    width: 100%; /* Tabellen fyller nå containeren sin */
+    width: 100%;
     background-color: #1e1e1e;
     border-radius: 15px;
     overflow: hidden;
