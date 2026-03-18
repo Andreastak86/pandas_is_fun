@@ -1,37 +1,57 @@
-* {
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+}
+
+html {
     font-family: "Segoe UI", Roboto, sans-serif;
 }
 
 body {
-    background-color: #121212;
-    color: #e0e0e0;
-    padding: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 50px;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.summary-box,
+#table-container {
+    width: 100%;
+    max-width: 1000px;
+}
+
+#table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.table-section {
+    width: 100%;
 }
 
 .summary-box {
-    background: linear-gradient(145deg, #252525, #2d2d2d);
-    border-left: 6px solid #007bff;
-    padding: 30px;
-    margin-bottom: 40px;
-    border-radius: 12px;
-    width: 100%;
-    max-width: 1000px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-bottom: 40px;
+    padding: 30px;
+    border-left: 6px solid #007bff;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #252525, #2d2d2d);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 .summary-box h1 {
-    font-size: 1.8rem;
     margin-bottom: 20px;
-    color: #fff;
+    color: #ffffff;
+    font-size: 1.8rem;
     letter-spacing: 1px;
 }
 
@@ -44,72 +64,95 @@ body {
 }
 
 .stats-grid p {
-    background: rgba(255, 255, 255, 0.05);
     padding: 15px;
-    border-radius: 8px;
     border: 1px solid #3d3d3d;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
     font-size: 0.9rem;
     line-height: 1.6;
 }
 
 .stats-grid b {
     display: block;
+    margin-bottom: 5px;
     color: #007bff;
     font-size: 0.8rem;
     text-transform: uppercase;
-    margin-bottom: 5px;
 }
 
 .stats-grid span {
+    color: #ffffff;
     font-size: 1.2rem;
-    font-weight: bold;
-    color: #fff;
+    font-weight: 700;
 }
 
-@media (max-width: 800px) {
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 500px) {
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-#table-container {
-    width: 100%;
-    max-width: 1000px;
-    display: flex;
-    justify-content: center;
+.table-section img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 table.dataframe {
-    border-collapse: collapse;
     width: 100%;
-    background-color: #1e1e1e;
-    border-radius: 15px;
+    border-collapse: collapse;
     overflow: hidden;
+    border-radius: 15px;
+    background-color: #1e1e1e;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
 }
 
-th {
-    background-color: #007bff;
-    color: white;
-    text-align: left;
-    padding: 18px;
-    font-size: 0.9rem;
-    text-transform: uppercase;
+#stats-table {
+    width: auto;
+    min-width: 500px;
 }
 
-th:last-child {
+#main-table {
+    width: 100%;
+}
+
+th,
+td {
+    height: auto;
+    vertical-align: middle;
+}
+
+th {
+    padding: 18px;
+    background-color: #007bff;
+    color: #ffffff;
+    text-align: left;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    user-select: none;
+    cursor: pointer;
+}
+
+th:last-child,
+td:last-child {
     text-align: right;
+}
+
+th:hover {
+    background-color: #0056b3;
+}
+
+th::after {
+    content: " ↕";
+    opacity: 0.5;
+    font-size: 0.7rem;
 }
 
 td {
     padding: 14px 18px;
     border-bottom: 1px solid #2a2a2a;
+}
+
+td:last-child {
+    color: #00ffcc;
+    font-family: "Consolas", monospace;
+    font-weight: 700;
 }
 
 tr:nth-child(even) {
@@ -121,24 +164,31 @@ tr:hover {
     cursor: default;
 }
 
-td:last-child {
-    text-align: right;
-    font-family: "Consolas", monospace;
-    color: #00ffcc;
-    font-weight: bold;
+@media (max-width: 800px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-th {
-    cursor: pointer;
-    user-select: none;
-}
+@media (max-width: 500px) {
+    body {
+        padding: 24px;
+    }
 
-th:hover {
-    background-color: #0056b3;
-}
+    .summary-box {
+        padding: 20px;
+    }
 
-th::after {
-    content: " ↕";
-    font-size: 0.7rem;
-    opacity: 0.5;
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #stats-table {
+        min-width: 100%;
+    }
+
+    th,
+    td {
+        padding: 12px;
+    }
 }

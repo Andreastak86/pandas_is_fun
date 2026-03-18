@@ -17,7 +17,68 @@
     </div>
 
     <div id="table-container">
-        <table class="dataframe dataframe">
+        <section class="table-section">
+            <h2>Lønnsfordeling (Graf)</h2>
+            <img src="stats_plot.png" alt="Lønnsgraf" style="max-width:100%; border-radius:12px; margin-bottom:30px;">
+        </section>
+
+        <section class="table-section">
+            <h2>Snittlønn per stilling</h2>
+            <table class="dataframe dataframe" id="stats-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Stilling</th>
+      <th>Snittlønn</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Data Scientist</td>
+      <td>972 500</td>
+    </tr>
+    <tr>
+      <td>Designer</td>
+      <td>762 500</td>
+    </tr>
+    <tr>
+      <td>Fullstack-utvikler</td>
+      <td>942 500</td>
+    </tr>
+    <tr>
+      <td>HR-rådgiver</td>
+      <td>792 500</td>
+    </tr>
+    <tr>
+      <td>Juniorutvikler</td>
+      <td>672 500</td>
+    </tr>
+    <tr>
+      <td>Produkteier</td>
+      <td>902 500</td>
+    </tr>
+    <tr>
+      <td>Prosjektleder</td>
+      <td>932 500</td>
+    </tr>
+    <tr>
+      <td>Seniorutvikler</td>
+      <td>1 002 500</td>
+    </tr>
+    <tr>
+      <td>UX-designer</td>
+      <td>832 500</td>
+    </tr>
+    <tr>
+      <td>Økonomidirektør</td>
+      <td>1 202 500</td>
+    </tr>
+  </tbody>
+</table>
+        </section>
+        
+        <section class="table-section">
+            <h2>Fullstendig oversikt</h2>
+            <table class="dataframe dataframe" id="main-table">
   <thead>
     <tr style="text-align: right;">
       <th>Navn</th>
@@ -428,6 +489,7 @@
     </tr>
   </tbody>
 </table>
+        </section>
     </div>
 
     <script src="script.js"></script>
